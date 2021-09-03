@@ -44,13 +44,15 @@
         top: 1vh;
         height: 98vh;
         width: 98vw;
-        background-color: black;
+        background-color: #A7B1BB;
         box-shadow: 1px 1px 1px #999;
         border-radius: 15px;
         z-index: 0;
         overflow-y: hidden;
         overflow-x: hidden;
         }
+
+
     </style>
     <!-- COPY PASTE TO QUALTRICS UP TO HERE -->
     
@@ -65,8 +67,7 @@
             timeline: timeline,
             display_element: 'display_stage',
             on_finish: function() {
-                display_element: 'display_stage_background',
-                jsPsych.data.displayData();
+                jsPsych.data.displayData('csv');
             }
         })
 
