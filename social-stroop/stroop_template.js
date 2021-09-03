@@ -441,27 +441,27 @@ var test = {
 becomes itself a block on the larger timeline -- make one nested timeline for each of the blocks (each stroop category) */
 var soc_neg_procedure = {
     timeline: [fixation, test], /* intersperse word and fixation trials */
-    timeline_variables: pool1_soc_neg /* can randomize the order of appearance of words within block if needed */
+    timeline_variables: jsPsych.randomization.shuffle(pool1_soc_neg) /* randomize the order of appearance of words within the block*/
 }
 var soc_pos_procedure = {
     timeline: [fixation, test], /* intersperse word and fixation trials */
-    timeline_variables: pool1_soc_pos /* can randomize the order of appearance of words within block if needed */
+    timeline_variables: jsPsych.randomization.shuffle(pool1_soc_pos) /* randomize the order of appearance of words within the block */
 }
 var emo_pos_procedure = {
     timeline: [fixation, test], /* intersperse word and fixation trials */
-    timeline_variables: pool1_emo_pos /* can randomize the order of appearance of words within block if needed */
+    timeline_variables: jsPsych.randomization.shuffle(pool1_emo_pos) /* randomize the order of appearance of words within the block */
 }
 var emo_neg_procedure = {
     timeline: [fixation, test], /* intersperse word and fixation trials */
-    timeline_variables: pool1_emo_neg /* can randomize the order of appearance of words within block if needed */
+    timeline_variables: jsPsych.randomization.shuffle(pool1_emo_neg) /* randomize the order of appearance of words within the block */
 }
 var color_procedure = {
     timeline: [fixation, test], /* intersperse word and fixation trials */
-    timeline_variables: pool1_color /* can randomize the order of appearance of words within block if needed */
+    timeline_variables: jsPsych.randomization.shuffle(pool1_color) /* randomize the order of appearance of words within the block */
 }
 var neutral_procedure = {
     timeline: [fixation, test], /* intersperse word and fixation trials */
-    timeline_variables: pool1_neutral /* can randomize the order of appearance of words within block if needed */
+    timeline_variables: jsPsych.randomization.shuffle(pool1_neutral) /* randomize the order of appearance of words within the block */
 }
 
 
