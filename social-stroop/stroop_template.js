@@ -173,6 +173,13 @@ var sleep13 = {
     choices: ['No problem at all', 'Only a very slight problem', 'Somewhat of a problem', 'A very big problem']
 }
 
+var sleep14 = {
+    type: "survey-text",
+    questions: [
+        {prompt: `<p style = 'color: white;'> During the past month, when have you usually gone to bed at night? </p>`}
+    ],
+}
+
 var sleep_wait = {
     type: "html-keyboard-response",
     stimulus: `<p style = 'color: white;'> Please wait a couple seconds for the start of the next color word game. </p>`,
@@ -474,7 +481,7 @@ var random_order = jsPsych.randomization.shuffle(blocks);
 
 /* create another level of nested timelines where we intersperse the blocks of words with the sleep questionnaire items */
 var real_trials = {
-    timeline: [sleep1, sleep2, sleep3, sleep4, sleep_wait, random_order[1], sleep5, sleep6, sleep7, sleep8, sleep_wait, random_order[2], sleep9, sleep10, sleep11, sleep12, sleep_wait, random_order[3], random_order[4], random_order[5]]
+    timeline: [sleep14, random_order[0], sleep1, sleep2, sleep3, sleep4, sleep_wait, random_order[1], sleep5, sleep6, sleep7, sleep8, sleep_wait, random_order[2], sleep9, sleep10, sleep11, sleep12, sleep_wait, random_order[3], random_order[4], random_order[5]]
 }
 /* add the real trials with their nested timelines to the larger first-level timeline */
 timeline.push(real_trials);
