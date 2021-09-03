@@ -104,7 +104,6 @@ var sleep1 = {
     type: "html-button-response",
     stimulus: `<p style = 'color: white;'> During the past month, how often have you had trouble sleeping because you cannot get to sleep within 30 minutes? </p>`,
     choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week'],
-    trial_duration: 60000,
     data: {
         task: "sleep1"
     }
@@ -176,9 +175,49 @@ var sleep13 = {
 var sleep14 = {
     type: "survey-text",
     questions: [
-        {prompt: `<p style = 'color: white;'> During the past month, when have you usually gone to bed at night? </p>`, placeholder: `<p style = 'color: white;'> Type text here </p>`}
+        {prompt: `<p style = 'color: white;'> During the past month, when have you usually gone to bed at night? </p>`, placeholder: `Type text here`}
     ],
-    button_label: `<p style = 'color: white;'> Next </p>`
+    button_label: `Click to continue>`
+}
+
+var sleep15 = {
+    type: "survey-text",
+    questions: [
+        {prompt: `<p style = 'color: white;'> During the past month, how long (in minutes) has it usually taken you to fall asleep each night? </p>`, placeholder: `Type text here`}
+    ],
+    button_label: `Click to continue>`
+}
+
+var sleep16 = {
+    type: "survey-text",
+    questions: [
+        {prompt: `<p style = 'color: white;'> During the past month, when have you usually gotten up in the morning? </p>`, placeholder: `Type text here`}
+    ],
+    button_label: `Click to continue>`
+}
+
+var sleep17 = {
+    type: "survey-text",
+    questions: [
+        {prompt: `<p style = 'color: white;'> During the past month, how many hours of actual sleep did you get at night? (this may be different than the number of hours you spend in bed) </p>`, placeholder: `Type text here`}
+    ],
+    button_label: `Click to continue>`
+}
+
+var sleep18 = {
+    type: "survey-text",
+    questions: [
+        {prompt: `<p style = 'color: white;'> During the past month, have any external circumstances (for example crying babies, barking dogs, street noise) prevented you from getting a good night's sleep? Please explain. </p>`, placeholder: `Type text here`}
+    ],
+    button_label: `Click to continue>`
+}
+
+var sleep19 = {
+    type: "survey-text",
+    questions: [
+        {prompt: `<p style = 'color: white;'> How do you think your sleep quality compares to that of other people in your life (friends, family, etc.)? </p>`, placeholder: `Type text here`}
+    ],
+    button_label: `Click to continue>`
 }
 
 var sleep_wait = {
@@ -482,7 +521,11 @@ var random_order = jsPsych.randomization.shuffle(blocks);
 
 /* create another level of nested timelines where we intersperse the blocks of words with the sleep questionnaire items */
 var real_trials = {
-    timeline: [sleep14, random_order[0], sleep1, sleep2, sleep3, sleep4, sleep_wait, random_order[1], sleep5, sleep6, sleep7, sleep8, sleep_wait, random_order[2], sleep9, sleep10, sleep11, sleep12, sleep_wait, random_order[3], random_order[4], random_order[5]]
+    timeline: [random_order[0], sleep14, sleep1, sleep2, sleep3, sleep_wait, random_order[1], sleep15, sleep4, sleep5, sleep6, sleep_wait, random_order[2], sleep16, sleep7, sleep8, sleep9, sleep_wait, random_order[3], sleep17, sleep10, sleep11, sleep12, sleep_wait, random_order[4],sleep18, sleep13, sleep_wait, random_order[5]]
 }
 /* add the real trials with their nested timelines to the larger first-level timeline */
 timeline.push(real_trials);
+
+// display data saved in console log to debug
+var all_data = jsPsych.data.get();
+console.log(all_data.csv());
