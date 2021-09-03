@@ -176,8 +176,9 @@ var sleep13 = {
 var sleep14 = {
     type: "survey-text",
     questions: [
-        {prompt: `<p style = 'color: white;'> During the past month, when have you usually gone to bed at night? </p>`}
+        {prompt: `<p style = 'color: white;'> During the past month, when have you usually gone to bed at night? </p>`, placeholder: `<p style = 'color: white;'> Type text here </p>`}
     ],
+    button_label: `<p style = 'color: white;'> Next </p>`
 }
 
 var sleep_wait = {
