@@ -8,7 +8,10 @@ var instructions_block = {
     When the word appears respond with the <strong>color of the text</strong> as quickly as you can. 
     Press <strong>R</strong> for RED, <strong>Y</strong> for YELLOW, <strong>G</strong> for GREEN, 
     and <strong>B</strong> for BLUE. Press any key to continue.</p>`,
-    post_trial_gap: 750
+    post_trial_gap: 750,
+    data: {
+        task: "instructions"
+    }
 };
 
 /* add instructions to timeline variable */
@@ -26,23 +29,82 @@ var fixation = {
 
 /* add practice block */
 /* create array of practice words */
-var practice_words = [
+/* 30 practice words for the first block */
+var block_1_practice_words = [
     { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
-     color: rgb(232, 0, 0);'><strong>HAIRPIN</strong></p>`, correct_response: 'r', word: 'hairpin', color: 'red', category: 'social_pos'},
+     color: rgb(232, 0, 0);'><strong>RED</strong></p>`, correct_response: 'r', word: 'red', color: 'red', category: 'practice'},
     { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
-     color: rgb(23, 5, 250);'><strong>RED</strong></p>`, correct_response: 'b', word: 'red', color: 'blue', category: 'social_pos'},
+     color: rgb(23, 5, 250);'><strong>RED</strong></p>`, correct_response: 'b', word: 'red', color: 'blue', category: 'practice'},
     { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
-     color: rgb(255, 255, 0);'><strong>GREEN</strong></p>`, correct_response: 'y', word: 'green', color: 'yellow', category: 'social_pos'},
+     color: rgb(255, 255, 0);'><strong>RED</strong></p>`, correct_response: 'y', word: 'red', color: 'yellow', category: 'practice'},
     { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
-     color: rgb(0, 125, 0);'><strong>ITEM</strong></p>`, correct_response: 'g', word: 'item', color: 'green', category: 'social_pos'},
+     color: rgb(0, 125, 0);'><strong>RED</strong></p>`, correct_response: 'g', word: 'red', color: 'green', category: 'practice'},
     { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
-     color: rgb(232, 0, 0);'><strong>BLUE</strong></p>`, correct_response: 'r', word: 'blue', color: 'red', category: 'social_pos'},
+     color: rgb(232, 0, 0);'><strong>HAIRPIN</strong></p>`, correct_response: 'r', word: 'hairpin', color: 'red', category: 'practice'},
     { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
-     color: rgb(23, 5, 250);'><strong>PENCIL</strong></p>`, correct_response: 'b', word: 'pencil', color: 'blue', category: 'social_pos'},
+     color: rgb(23, 5, 250);'><strong>HAIRPIN</strong></p>`, correct_response: 'b', word: 'hairpin', color: 'blue', category: 'practice'},
     { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
-     color: rgb(0, 125, 0);'><strong>YELLOW</strong></p>`, correct_response: 'g', word: 'yellow', color: 'green', category: 'social_pos'}
+     color: rgb(255, 255, 0);'><strong>HAIRPIN</strong></p>`, correct_response: 'y', word: 'hairpin', color: 'yellow', category: 'practice'},
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(0, 125, 0);'><strong>HAIRPIN</strong></p>`, correct_response: 'g', word: 'hairpin', color: 'green', category: 'practice'},
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(232, 0, 0);'><strong>GREEN</strong></p>`, correct_response: 'r', word: 'green', color: 'red', category: 'practice'},
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(23, 5, 250);'><strong>GREEN</strong></p>`, correct_response: 'b', word: 'green', color: 'blue', category: 'practice'},
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(255, 255, 0);'><strong>GREEN</strong></p>`, correct_response: 'y', word: 'green', color: 'yellow', category: 'practice'},
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(0, 125, 0);'><strong>GREEN</strong></p>`, correct_response: 'g', word: 'green', color: 'green', category: 'practice'},
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(232, 0, 0);'><strong>ITEM</strong></p>`, correct_response: 'r', word: 'item', color: 'red', category: 'practice'},
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(23, 5, 250);'><strong>ITEM</strong></p>`, correct_response: 'b', word: 'item', color: 'blue', category: 'practice'},
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(255, 255, 0);'><strong>ITEM</strong></p>`, correct_response: 'y', word: 'item', color: 'yellow', category: 'practice'},
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(0, 125, 0);'><strong>ITEM</strong></p>`, correct_response: 'g', word: 'item', color: 'green', category: 'practice'},
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(232, 0, 0);'><strong>YELLOW</strong></p>`, correct_response: 'r', word: 'yellow', color: 'red', category: 'practice'},
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(23, 5, 250);'><strong>YELLOW</strong></p>`, correct_response: 'b', word: 'yellow', color: 'blue', category: 'practice'},
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(255, 255, 0);'><strong>YELLOW</strong></p>`, correct_response: 'y', word: 'yellow', color: 'yellow', category: 'practice'},
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(0, 125, 0);'><strong>YELLOW</strong></p>`, correct_response: 'g', word: 'yellow', color: 'green', category: 'practice'},
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(232, 0, 0);'><strong>PENCIL</strong></p>`, correct_response: 'r', word: 'pencil', color: 'red', category: 'practice'},
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(23, 5, 250);'><strong>PENCIL</strong></p>`, correct_response: 'b', word: 'pencil', color: 'blue', category: 'practice'},
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(255, 255, 0);'><strong>PENCIL</strong></p>`, correct_response: 'y', word: 'pencil', color: 'yellow', category: 'practice'},
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(0, 125, 0);'><strong>PENCIL</strong></p>`, correct_response: 'g', word: 'pencil', color: 'green', category: 'practice'},
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(232, 0, 0);'><strong>BLUE</strong></p>`, correct_response: 'r', word: 'blue', color: 'red', category: 'practice'},
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(23, 5, 250);'><strong>BLUE</strong></p>`, correct_response: 'b', word: 'blue', color: 'blue', category: 'practice'},
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(255, 255, 0);'><strong>BLUE</strong></p>`, correct_response: 'y', word: 'blue', color: 'yellow', category: 'practice'},
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(0, 125, 0);'><strong>BLUE</strong></p>`, correct_response: 'g', word: 'blue', color: 'green', category: 'practice'},
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(232, 0, 0);'><strong>HAIRPIN</strong></p>`, correct_response: 'r', word: 'hairpin', color: 'red', category: 'practice'},
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(23, 5, 250);'><strong>ITEM</strong></p>`, correct_response: 'b', word: 'item', color: 'blue', category: 'practice'}
 ];
-
+/* 5 practice words for second block */
+var block_2_practice_words = [
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(232, 0, 0);'><strong>HAIRPIN</strong></p>`, correct_response: 'r', word: 'hairpin', color: 'red', category: 'practice'},
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(23, 5, 250);'><strong>RED</strong></p>`, correct_response: 'b', word: 'red', color: 'blue', category: 'practice'},
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(255, 255, 0);'><strong>GREEN</strong></p>`, correct_response: 'y', word: 'green', color: 'yellow', category: 'practice'},
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(0, 125, 0);'><strong>ITEM</strong></p>`, correct_response: 'g', word: 'item', color: 'green', category: 'practice'},
+    { stimulus: `<p style='font-size: 37.333px; font-family: Arial, Helvetica, sans-serif;
+     color: rgb(232, 0, 0);'><strong>PENCIL</strong></p>`, correct_response: 'r', word: 'pencil', color: 'red', category: 'practice'}
+];
 
 /* create a practice variable that specifies the aspects of the practice trials (what to click, how long it lasts) and save the relevant trial-level data */
 var practice = {
@@ -94,7 +156,10 @@ var practice_procedure = {
 var end_practice = {
     type: "html-keyboard-response",
     stimulus: `<p style= 'color: white;'> You have completed the practice trials. Press any key to continue. </p>`,
-    post_trial_gap: 750
+    post_trial_gap: 750,
+    data: {
+        task: "end_practice"
+    }
 }
 
 timeline.push(end_practice);
@@ -119,66 +184,102 @@ var sleep2 = {
 var sleep3 = {
     type: "html-button-response",
     stimulus: `<p style = 'color: white;'> During the past month, how often have you had trouble sleeping because you have to get up to use the bathroom? </p>`,
-    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week']
+    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week'],
+    data: {
+        task: "PSQI5c"
+    }
 }
 var sleep4 = {
     type: "html-button-response",
     stimulus: `<p style = 'color: white;'> During the past month, how often have you had trouble sleeping because you cannot breathe comfortably? </p>`,
-    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week']
+    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week'],
+    data: {
+        task: "PSQI5d"
+    }
 }
 var sleep5 = {
     type: "html-button-response",
     stimulus: `<p style = 'color: white;'> During the past month, how often have you had trouble sleeping because you cough or snore loudly? </p>`,
-    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week']
+    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week'],
+    data: {
+        task: "PSQI5e"
+    }
 }
 var sleep6 = {
     type: "html-button-response",
     stimulus: `<p style = 'color: white;'> During the past month, how often have you had trouble sleeping because you feel too cold? </p>`,
-    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week']
+    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week'],
+    data: {
+        task: "PSQI5f"
+    }
 }
 var sleep7 = {
     type: "html-button-response",
     stimulus: `<p style = 'color: white;'> During the past month, how often have you had trouble sleeping because you feel too hot? </p>`,
-    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week']
+    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week'],
+    data: {
+        task: "PSQI5g"
+    }
 }
 var sleep8 = {
     type: "html-button-response",
     stimulus: `<p style = 'color: white;'> During the past month, how often have you had trouble sleeping because you had bad dreams? </p>`,
-    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week']
+    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week'],
+    data: {
+        task: "PSQI5h"
+    }
 }
 var sleep9 = {
     type: "html-button-response",
     stimulus: `<p style = 'color: white;'> During the past month, how often have you had trouble sleeping because you have pain? </p>`,
-    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week']
+    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week'],
+    data: {
+        task: "PSQI5i"
+    }
 }
 var sleep10 = {
     type: "html-button-response",
     stimulus: `<p style = 'color: white;'> During the past month, how would you rate your sleep quality overall? </p>`,
-    choices: ['Very good', 'Fairly good', 'Fairly bad', 'Very bad']
+    choices: ['Very good', 'Fairly good', 'Fairly bad', 'Very bad'],
+    data: {
+        task: "PSQI6"
+    }
 }
 
 var sleep11 = {
     type: "html-button-response",
     stimulus: `<p style = 'color: white;'> During the past month, how often have you taken medicine (prescribed or "over the counter") to help you sleep? </p>`,
-    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week']
+    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week'],
+    data: {
+        task: "PSQI7"
+    }
 }
 
 var sleep12 = {
     type: "html-button-response",
     stimulus: `<p style = 'color: white;'> During the past month, how often have you had trouble staying awake while driving, eating meals, or engaging in social activity? </p>`,
-    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week']
+    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week'],
+    data: {
+        task: "PSQI8"
+    }
 }
 
 var sleep13 = {
     type: "html-button-response",
     stimulus: `<p style = 'color: white;'> During the past month, how much of a problem has it been for you to keep up enough enthusiasm to get things done? </p>`,
-    choices: ['No problem at all', 'Only a very slight problem', 'Somewhat of a problem', 'A very big problem']
+    choices: ['No problem at all', 'Only a very slight problem', 'Somewhat of a problem', 'A very big problem'],
+    data: {
+        task: "PSQI9"
+    }
 }
 
 var sleep14 = {
     type: "html-button-response",
     stimulus: `<p style = 'color: white;'> On avergae, how do you think your sleep quality compares to that of other people in your life (friends, family, etc.)? </p>`,
-    choices: ['A lot worse', 'Slightly worse', 'About the same', 'Slightly better', 'A lot better']
+    choices: ['A lot worse', 'Slightly worse', 'About the same', 'Slightly better', 'A lot better'],
+    data: {
+        task: "sleep_others"
+    }
 }
 
 var sleep15 = {
@@ -186,7 +287,10 @@ var sleep15 = {
     questions: [
         {prompt: `<p style = 'color: white;'> During the past month, when have you usually gone to bed at night? </p>`, placeholder: `Type text here`}
     ],
-    button_label: `Click to continue>`
+    button_label: `Click to continue>`,
+    data: {
+        task: "PSQI1"
+    }
 }
 
 var sleep16 = {
@@ -194,7 +298,10 @@ var sleep16 = {
     questions: [
         {prompt: `<p style = 'color: white;'> During the past month, how long (in minutes) has it usually taken you to fall asleep each night? </p>`, placeholder: `Type text here`}
     ],
-    button_label: `Click to continue>`
+    button_label: `Click to continue>`,
+    data: {
+        task: "PSQI2"
+    }
 }
 
 var sleep17 = {
@@ -202,7 +309,10 @@ var sleep17 = {
     questions: [
         {prompt: `<p style = 'color: white;'> During the past month, when have you usually gotten up in the morning? </p>`, placeholder: `Type text here`}
     ],
-    button_label: `Click to continue>`
+    button_label: `Click to continue>`,
+    data: {
+        task: "PSQI3"
+    }
 }
 
 var sleep18 = {
@@ -210,26 +320,35 @@ var sleep18 = {
     questions: [
         {prompt: `<p style = 'color: white;'> During the past month, how many hours of actual sleep did you get at night? (this may be different than the number of hours you spend in bed) </p>`, placeholder: `Type text here`}
     ],
-    button_label: `Click to continue>`
+    button_label: `Click to continue>`,
+    data: {
+        task: "PSQI4"
+    }
 }
 
 var sleep19 = {
     type: "survey-text",
     questions: [
-        {prompt: `<p style = 'color: white;'> During the past month, have any external circumstances (for example crying babies, barking dogs, street noise) prevented you from getting a good night's sleep? Please explain. </p>`, placeholder: `Type text here`, name: "sleep_external"}
+        {prompt: `<p style = 'color: white;'> During the past month, have any external circumstances (for example crying babies, barking dogs, street noise) prevented you from getting a good night's sleep? Please explain. </p>`, placeholder: `Type text here`}
     ],
-    button_label: `Click to continue>`
+    button_label: `Click to continue>`,
+    data: {
+        task: "sleep_external"
+    }
 }
 
 var sleep20 = {
     type: "survey-text",
     questions: [
-        {prompt: `<p style = 'color: white;'> In the past month, has anyone in your household (apart from yourself) experienced problems sleeping? </p>`, placeholder: `Type text here`, name: 'household_sleep'}
+        {prompt: `<p style = 'color: white;'> In the past month, has anyone in your household (apart from yourself) experienced problems sleeping? </p>`, placeholder: `Type text here`}
     ],
-    button_label: `Click to continue>`
+    button_label: `Click to continue>`,
+    data: {
+        task: "household_sleep"
+    }
 }
 
-var sleep_wait = {
+var wait = {
     type: "html-keyboard-response",
     stimulus: `<p style = 'color: white;'> Please wait a couple seconds for the start of the next color word game. </p>`,
     choices: jsPsych.NO_KEYS,
@@ -237,6 +356,9 @@ var sleep_wait = {
         var last_trials_time_elapsed = jsPsych.data.get().last(4).values();
         var duration = 60000 - (last_trials_time_elapsed[0].rt + last_trials_time_elapsed[1].rt + last_trials_time_elapsed[2].rt + last_trials_time_elapsed[3].rt);
         return duration
+    },
+    data: {
+        task: "wait"
     }
 }
 
@@ -530,12 +652,7 @@ var random_order = jsPsych.randomization.shuffle(blocks);
 
 /* create another level of nested timelines where we intersperse the blocks of words with the sleep questionnaire items */
 var real_trials = {
-    // timeline: [random_order[0], sleep15, sleep1, sleep2, sleep3, sleep_wait, random_order[1], sleep16, sleep4, sleep5, sleep6, sleep_wait, random_order[2], sleep17, sleep7, sleep8, sleep9, sleep_wait, random_order[3], sleep18, sleep10, sleep11, sleep12, sleep_wait, random_order[4],sleep19, sleep13, sleep15, sleep20, sleep_wait, random_order[5]]
-    timeline: [sleep1, sleep2, sleep20]
+    timeline: [random_order[0], sleep15, sleep1, sleep2, sleep3, wait, random_order[1], sleep16, sleep4, sleep5, sleep6, wait, random_order[2], sleep17, sleep7, sleep8, sleep9, wait, random_order[3], sleep18, sleep10, sleep11, sleep12, wait, random_order[4],sleep19, sleep13, sleep15, sleep20, wait, random_order[5]]
 }
 /* add the real trials with their nested timelines to the larger first-level timeline */
 timeline.push(real_trials);
-
-// display data saved in console log to debug
-var all_data = jsPsych.data.get();
-console.log(all_data.csv());

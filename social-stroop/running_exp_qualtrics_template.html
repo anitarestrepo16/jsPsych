@@ -44,7 +44,7 @@
         top: 1vh;
         height: 98vh;
         width: 98vw;
-        background-color: #A7B1BB;
+        background-color: black;
         box-shadow: 1px 1px 1px #999;
         border-radius: 15px;
         z-index: 0;
@@ -67,7 +67,8 @@
             timeline: timeline,
             display_element: 'display_stage',
             on_finish: function() {
-                jsPsych.data.displayData('csv');
+                jsPsych.data.displayData('csv'),
+                jsPsych.data.get().localSave('csv','mydata.csv'); // temporary: save the csv file of all the data for debugging
             }
         })
 
