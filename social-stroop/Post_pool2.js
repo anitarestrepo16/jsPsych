@@ -147,11 +147,11 @@ var feedback = {
 
 var practice_procedure = {
     timeline: [fixation, practice, feedback], /* intersperse fixation, practice word, feedback */
-    timeline_variables: jsPsych.randomization.shuffle(practice_words) /* randomize the order of appearance of words */
+    timeline_variables: jsPsych.randomization.shuffle(block_2_practice_words) /* randomize the order of appearance of words */
 };
 
 /* add the actual full procedure to the timeline after the instructions */
-/*timeline.push(practice_procedure);*/
+timeline.push(practice_procedure);
 
 var end_practice = {
     type: "html-keyboard-response",
@@ -619,27 +619,27 @@ var test = {
 becomes itself a block on the larger timeline -- make one nested timeline for each of the blocks (each stroop category) */
 var soc_neg_procedure = {
     timeline: [fixation, test], /* intersperse word and fixation trials */
-    timeline_variables: jsPsych.randomization.shuffle(pool1_soc_neg) /* randomize the order of appearance of words within the block*/
+    timeline_variables: jsPsych.randomization.shuffle(pool2_soc_neg) /* randomize the order of appearance of words within the block*/
 }
 var soc_pos_procedure = {
     timeline: [fixation, test], /* intersperse word and fixation trials */
-    timeline_variables: jsPsych.randomization.shuffle(pool1_soc_pos) /* randomize the order of appearance of words within the block */
+    timeline_variables: jsPsych.randomization.shuffle(pool2_soc_pos) /* randomize the order of appearance of words within the block */
 }
 var emo_pos_procedure = {
     timeline: [fixation, test], /* intersperse word and fixation trials */
-    timeline_variables: jsPsych.randomization.shuffle(pool1_emo_pos) /* randomize the order of appearance of words within the block */
+    timeline_variables: jsPsych.randomization.shuffle(pool2_emo_pos) /* randomize the order of appearance of words within the block */
 }
 var emo_neg_procedure = {
     timeline: [fixation, test], /* intersperse word and fixation trials */
-    timeline_variables: jsPsych.randomization.shuffle(pool1_emo_neg) /* randomize the order of appearance of words within the block */
+    timeline_variables: jsPsych.randomization.shuffle(pool2_emo_neg) /* randomize the order of appearance of words within the block */
 }
 var color_procedure = {
     timeline: [fixation, test], /* intersperse word and fixation trials */
-    timeline_variables: jsPsych.randomization.shuffle(pool1_color) /* randomize the order of appearance of words within the block */
+    timeline_variables: jsPsych.randomization.shuffle(pool2_color) /* randomize the order of appearance of words within the block */
 }
 var neutral_procedure = {
     timeline: [fixation, test], /* intersperse word and fixation trials */
-    timeline_variables: jsPsych.randomization.shuffle(pool1_neutral) /* randomize the order of appearance of words within the block */
+    timeline_variables: jsPsych.randomization.shuffle(pool2_neutral) /* randomize the order of appearance of words within the block */
 }
 
 

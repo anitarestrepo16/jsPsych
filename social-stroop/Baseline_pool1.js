@@ -147,11 +147,11 @@ var feedback = {
 
 var practice_procedure = {
     timeline: [fixation, practice, feedback], /* intersperse fixation, practice word, feedback */
-    timeline_variables: jsPsych.randomization.shuffle(practice_words) /* randomize the order of appearance of words */
+    timeline_variables: jsPsych.randomization.shuffle(block_1_practice_words) /* randomize the order of appearance of words */
 };
 
 /* add the actual full procedure to the timeline after the instructions */
-/*timeline.push(practice_procedure);*/
+timeline.push(practice_procedure);
 
 var end_practice = {
     type: "html-keyboard-response",
