@@ -8,6 +8,7 @@
         <script src="../plugins/jspsych-survey-text.js"></script>
         <script src="../plugins/jspsych-html-button-response.js"></script>
         <script src="stroop_template.js"></script> 
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
         <link href="../css/jspsych.css" rel="stylesheet" type="text/css">
     </head>
     <body>
@@ -17,7 +18,7 @@
 
   <!-- Change 3: Adding extra scripts for Qualtrics -->  
   <!-- jspsych.css should be availble from your GitHub at 
-    https://<your-github-username>.github.io/<your-experiment-name>/jspsych-6.1.0/css/jspsych.css -->
+    https://<your-github-username>.github.io/<your-experiment-name>/css/jspsych.css -->
     <link href="https://anitarestrepo16.github.io/new_stroop/css/jspsych.css" rel="stylesheet" type="text/css"></link>
 
     <div>
@@ -63,12 +64,48 @@
     
     <script>
 
+    /* Change 4: Defining necessary variables for saving the results */
+    // experimental session-defining variables
+    var task_name = "stroop"; // label each individual stroop
+    var sbj_id = "${e://Field/workerId}";
+
+    // you must put your save_data php url here.
+    var save_url = "https://users.rcc.uchicago.edu/~ar277/exp_data/save_data.php";
+    var data_dir = task_name;
+
+    // my preference is to include the task and sbj_id in the file name
+    var file_name = task_name + '_' + sbj_id; 
+
+    /* Change 5: Defining save functions using jQuery */
+
+    function save_data_csv() {
+        jQuery.ajax({
+            type: 'post',
+            cache: false,
+            url: save_url,
+            data: {
+                data_dir: data_dir,
+                file_name: file_name + '.csv', // the file type should be added
+                exp_data: jsPsych.data.get().csv()
+            }
+        });
+    }
+
         jsPsych.init({
             timeline: timeline,
             display_element: 'display_stage',
-            on_finish: function() {
-                jsPsych.data.displayData('csv'),
-                jsPsych.data.get().localSave('csv','mydata.csv'); // temporary: save the csv file of all the data for debugging
+            on_finish: function(data) {
+                // include the participant ID in the data
+                // this must be done before saving
+                jsPsych.data.get().addToLast({participant: sbj_id});
+                save_data_csv(); // send the results to web server after completion
+
+                // clear the stage
+                jQuery('display_stage').remove();
+                jQuery('display_stage_background').remove();
+
+                // simulate click on Qualtrics "next" button, making use of the Qualtrics JS API
+                qthis.clickNextButton();
             }
         })
 
