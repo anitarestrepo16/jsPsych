@@ -362,6 +362,187 @@ var wait = {
     }
 }
 
+/* Create trials with questions from Wisdom Questionnaire */
+var Wisdom1 = {
+    type: "html-button-response",
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I have a good handle on the different responsibilities in my life. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
+    data: {
+        task: "Wisdom1"
+    }
+}
+var Wisdom2 = {
+    type: "html-button-response",
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I think I’m good at understanding other people’s emotions. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
+    data: {
+        task: "Wisdom2"
+    }
+}
+var Wisdom3 = {
+    type: "html-button-response",
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I have a good sense of humor about myself. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
+    data: {
+        task: "Wisdom3"
+    }
+}
+var Wisdom4 = {
+    type: "html-button-response",
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I can show emotion without feeling like I might lose control. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
+    data: {
+        task: "Wisdom4"
+    }
+}
+var Wisdom5 = {
+    type: "html-button-response",
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I’m okay with the fact that life circumstances change all the time. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
+    data: {
+        task: "Wisdom5"
+    }
+}
+var Wisdom6 = {
+    type: "html-button-response",
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> Sometimes I get so emotional that I can’t see all the ways of dealing with my problems. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
+    data: {
+        task: "Wisdom6"
+    }
+}
+var Wisdom7 = {
+    type: "html-button-response",
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I’m a stronger person for all I’ve been through. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
+    data: {
+        task: "Wisdom7"
+    }
+}
+var Wisdom8 = {
+    type: "html-button-response",
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I’m very curious about other religious and/or philosophical belief systems. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
+    data: {
+        task: "Wisdom8"
+    }
+}
+var Wisdom9 = {
+    type: "html-button-response",
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> At this point in my life, I find it easy to laugh at my mistakes. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
+    data: {
+        task: "Wisdom9"
+    }
+}
+var Wisdom10 = {
+    type: "html-button-response",
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I’m not easily upset. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
+    data: {
+        task: "Wisdom10"
+    }
+}
+var Wisdom11 = {
+    type: "html-button-response",
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> My happiness doesn’t depend on other people and things. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
+    data: {
+        task: "Wisdom11"
+    }
+}
+var Wisdom12 = {
+    type: "html-button-response",
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I’ve learned valuable life lessons from others. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
+    data: {
+        task: "Wisdom12"
+    }
+}
+var Wisdom13 = {
+    type: "html-button-response",
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I don’t worry about other people’s opinions of me. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
+    data: {
+        task: "Wisdom13"
+    }
+}
+var Wisdom14 = {
+    type: "html-button-response",
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I either get very angry or depressed if things go wrong. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
+    data: {
+        task: "Wisdom14"
+    }
+}
+var Wisdom15 = {
+    type: "html-button-response",
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I like to read books which challenge my views. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
+    data: {
+        task: "Wisdom15"
+    }
+}
+var Wisdom16 = {
+    type: "html-button-response",
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I feel that I’m part of something bigger. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
+    data: {
+        task: "Wisdom16"
+    }
+}
+var Wisdom17 = {
+    type: "html-button-response",
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I always try to see all sides of a problem. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
+    data: {
+        task: "Wisdom17"
+    }
+}
+var Wisdom18 = {
+    type: "html-button-response",
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I often feel one with nature. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
+    data: {
+        task: "Wisdom18"
+    }
+}
+var Wisdom19 = {
+    type: "html-button-response",
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I am “tuned in” to my own emotions. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
+    data: {
+        task: "Wisdom19"
+    }
+}
+var Wisdom20 = {
+    type: "html-button-response",
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> There are some people I would never like. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
+    data: {
+        task: "Wisdom20"
+    }
+}
 /* create array of words for the stroop with relevant variables to save tagged on */
 /* Pool 1 */
 var pool1_soc_pos = [

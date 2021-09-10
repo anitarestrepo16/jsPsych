@@ -164,187 +164,185 @@ var end_practice = {
 
 timeline.push(end_practice);
 
-/* create trials with questions from Pittsburgh Sleep Quality Index - one item per variable */
-var sleep1 = {
+//* Create trials with questions from Wisdom Questionnaire */
+var Wisdom1 = {
     type: "html-button-response",
-    stimulus: `<p style = 'color: white;'> During the past month, how often have you had trouble sleeping because you cannot get to sleep within 30 minutes? </p>`,
-    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week'],
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I have a good handle on the different responsibilities in my life. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
     data: {
-        task: "PSQI5a"
+        task: "Wisdom1"
     }
 }
-var sleep2 = {
+var Wisdom2 = {
     type: "html-button-response",
-    stimulus: `<p style = 'color: white;'> During the past month, how often have you had trouble sleeping because you wake up in the middle of the night or early morning? </p>`,
-    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week'],
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I think I’m good at understanding other people’s emotions. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
     data: {
-        task: "PSQI5b"
+        task: "Wisdom2"
     }
 }
-var sleep3 = {
+var Wisdom3 = {
     type: "html-button-response",
-    stimulus: `<p style = 'color: white;'> During the past month, how often have you had trouble sleeping because you have to get up to use the bathroom? </p>`,
-    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week'],
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I have a good sense of humor about myself. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
     data: {
-        task: "PSQI5c"
+        task: "Wisdom3"
     }
 }
-var sleep4 = {
+var Wisdom4 = {
     type: "html-button-response",
-    stimulus: `<p style = 'color: white;'> During the past month, how often have you had trouble sleeping because you cannot breathe comfortably? </p>`,
-    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week'],
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I can show emotion without feeling like I might lose control. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
     data: {
-        task: "PSQI5d"
+        task: "Wisdom4"
     }
 }
-var sleep5 = {
+var Wisdom5 = {
     type: "html-button-response",
-    stimulus: `<p style = 'color: white;'> During the past month, how often have you had trouble sleeping because you cough or snore loudly? </p>`,
-    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week'],
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I’m okay with the fact that life circumstances change all the time. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
     data: {
-        task: "PSQI5e"
+        task: "Wisdom5"
     }
 }
-var sleep6 = {
+var Wisdom6 = {
     type: "html-button-response",
-    stimulus: `<p style = 'color: white;'> During the past month, how often have you had trouble sleeping because you feel too cold? </p>`,
-    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week'],
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> Sometimes I get so emotional that I can’t see all the ways of dealing with my problems. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
     data: {
-        task: "PSQI5f"
+        task: "Wisdom6"
     }
 }
-var sleep7 = {
+var Wisdom7 = {
     type: "html-button-response",
-    stimulus: `<p style = 'color: white;'> During the past month, how often have you had trouble sleeping because you feel too hot? </p>`,
-    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week'],
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I’m a stronger person for all I’ve been through. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
     data: {
-        task: "PSQI5g"
+        task: "Wisdom7"
     }
 }
-var sleep8 = {
+var Wisdom8 = {
     type: "html-button-response",
-    stimulus: `<p style = 'color: white;'> During the past month, how often have you had trouble sleeping because you had bad dreams? </p>`,
-    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week'],
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I’m very curious about other religious and/or philosophical belief systems. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
     data: {
-        task: "PSQI5h"
+        task: "Wisdom8"
     }
 }
-var sleep9 = {
+var Wisdom9 = {
     type: "html-button-response",
-    stimulus: `<p style = 'color: white;'> During the past month, how often have you had trouble sleeping because you have pain? </p>`,
-    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week'],
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> At this point in my life, I find it easy to laugh at my mistakes. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
     data: {
-        task: "PSQI5i"
+        task: "Wisdom9"
     }
 }
-var sleep10 = {
+var Wisdom10 = {
     type: "html-button-response",
-    stimulus: `<p style = 'color: white;'> During the past month, how would you rate your sleep quality overall? </p>`,
-    choices: ['Very good', 'Fairly good', 'Fairly bad', 'Very bad'],
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I’m not easily upset. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
     data: {
-        task: "PSQI6"
+        task: "Wisdom10"
     }
 }
-
-var sleep11 = {
+var Wisdom11 = {
     type: "html-button-response",
-    stimulus: `<p style = 'color: white;'> During the past month, how often have you taken medicine (prescribed or "over the counter") to help you sleep? </p>`,
-    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week'],
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> My happiness doesn’t depend on other people and things. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
     data: {
-        task: "PSQI7"
+        task: "Wisdom11"
     }
 }
-
-var sleep12 = {
+var Wisdom12 = {
     type: "html-button-response",
-    stimulus: `<p style = 'color: white;'> During the past month, how often have you had trouble staying awake while driving, eating meals, or engaging in social activity? </p>`,
-    choices: ['Not during the past month', 'Less than once a week', 'Once or twice a week', 'Three or more times a week'],
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I’ve learned valuable life lessons from others. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
     data: {
-        task: "PSQI8"
+        task: "Wisdom12"
     }
 }
-
-var sleep13 = {
+var Wisdom13 = {
     type: "html-button-response",
-    stimulus: `<p style = 'color: white;'> During the past month, how much of a problem has it been for you to keep up enough enthusiasm to get things done? </p>`,
-    choices: ['No problem at all', 'Only a very slight problem', 'Somewhat of a problem', 'A very big problem'],
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I don’t worry about other people’s opinions of me. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
     data: {
-        task: "PSQI9"
+        task: "Wisdom13"
     }
 }
-
-var sleep14 = {
+var Wisdom14 = {
     type: "html-button-response",
-    stimulus: `<p style = 'color: white;'> On avergae, how do you think your sleep quality compares to that of other people in your life (friends, family, etc.)? </p>`,
-    choices: ['A lot worse', 'Slightly worse', 'About the same', 'Slightly better', 'A lot better'],
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I either get very angry or depressed if things go wrong. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
     data: {
-        task: "sleep_others"
+        task: "Wisdom14"
     }
 }
-
-var sleep15 = {
-    type: "survey-text",
-    questions: [
-        {prompt: `<p style = 'color: white;'> During the past month, when have you usually gone to bed at night? </p>`, placeholder: `Type text here`}
-    ],
-    button_label: `Click to continue>`,
+var Wisdom15 = {
+    type: "html-button-response",
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I like to read books which challenge my views. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
     data: {
-        task: "PSQI1"
+        task: "Wisdom15"
     }
 }
-
-var sleep16 = {
-    type: "survey-text",
-    questions: [
-        {prompt: `<p style = 'color: white;'> During the past month, how long (in minutes) has it usually taken you to fall asleep each night? </p>`, placeholder: `Type text here`}
-    ],
-    button_label: `Click to continue>`,
+var Wisdom16 = {
+    type: "html-button-response",
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I feel that I’m part of something bigger. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
     data: {
-        task: "PSQI2"
+        task: "Wisdom16"
     }
 }
-
-var sleep17 = {
-    type: "survey-text",
-    questions: [
-        {prompt: `<p style = 'color: white;'> During the past month, when have you usually gotten up in the morning? </p>`, placeholder: `Type text here`}
-    ],
-    button_label: `Click to continue>`,
+var Wisdom17 = {
+    type: "html-button-response",
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I always try to see all sides of a problem. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
     data: {
-        task: "PSQI3"
+        task: "Wisdom17"
     }
 }
-
-var sleep18 = {
-    type: "survey-text",
-    questions: [
-        {prompt: `<p style = 'color: white;'> During the past month, how many hours of actual sleep did you get at night? (this may be different than the number of hours you spend in bed) </p>`, placeholder: `Type text here`}
-    ],
-    button_label: `Click to continue>`,
+var Wisdom18 = {
+    type: "html-button-response",
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I often feel one with nature. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
     data: {
-        task: "PSQI4"
+        task: "Wisdom18"
     }
 }
-
-var sleep19 = {
-    type: "survey-text",
-    questions: [
-        {prompt: `<p style = 'color: white;'> During the past month, have any external circumstances (for example crying babies, barking dogs, street noise) prevented you from getting a good night's sleep? Please explain. </p>`, placeholder: `Type text here`}
-    ],
-    button_label: `Click to continue>`,
+var Wisdom19 = {
+    type: "html-button-response",
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> I am “tuned in” to my own emotions. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
     data: {
-        task: "sleep_external"
+        task: "Wisdom19"
     }
 }
-
-var sleep20 = {
-    type: "survey-text",
-    questions: [
-        {prompt: `<p style = 'color: white;'> In the past month, has anyone in your household (apart from yourself) experienced problems sleeping? </p>`, placeholder: `Type text here`}
-    ],
-    button_label: `Click to continue>`,
+var Wisdom20 = {
+    type: "html-button-response",
+    prompt: `<p style = 'color: white;'> Please indicate how much you agree with the statement. </p>`,
+    stimulus: `<p style = 'color: white;'> There are some people I would never like. </p>`,
+    choices: ['Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'],
     data: {
-        task: "household_sleep"
+        task: "Wisdom20"
     }
 }
 
@@ -1228,7 +1226,7 @@ var random_order = jsPsych.randomization.shuffle(blocks);
 
 /* create another level of nested timelines where we intersperse the blocks of words with the sleep questionnaire items */
 var real_trials = {
-    timeline: [random_order[0], sleep15, sleep1, sleep2, sleep3, wait, random_order[1], sleep16, sleep4, sleep5, sleep6, wait, random_order[2], sleep17, sleep7, sleep8, sleep9, wait, random_order[3], sleep18, sleep10, sleep11, sleep12, wait, random_order[4],sleep19, sleep13, sleep15, sleep20, wait, random_order[5]]
+    timeline: [random_order[0], Wisdom1, Wisdom2, Wisdom3, Wisdom4, wait, random_order[1], Wisdom5, Wisdom6, Wisdom7, Wisdom8, wait, random_order[2], Wisdom9, Wisdom10, Wisdom11, Wisdom12, wait, random_order[3], Wisdom13, Wisdom14, Wisdom15, Wisdom16, wait, random_order[4], Wisom17, Wisdom18, Wisdom19, Wisdom20, wait, random_order[5]]
 }
 /* add the real trials with their nested timelines to the larger first-level timeline */
 timeline.push(real_trials);
