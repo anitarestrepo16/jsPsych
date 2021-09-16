@@ -1226,7 +1226,7 @@ var random_order = jsPsych.randomization.shuffle(blocks);
 
 /* create another level of nested timelines where we intersperse the blocks of words with the sleep questionnaire items */
 var real_trials = {
-    timeline: [random_order[0], Wisdom1, Wisdom2, Wisdom3, Wisdom4, wait, random_order[1], Wisdom5, Wisdom6, Wisdom7, Wisdom8, wait, random_order[2], Wisdom9, Wisdom10, Wisdom11, Wisdom12, wait, random_order[3], Wisdom13, Wisdom14, Wisdom15, Wisdom16, wait, random_order[4], Wisom17, Wisdom18, Wisdom19, Wisdom20, wait, random_order[5]]
+    timeline: [random_order[0], Wisdom1, Wisdom2, Wisdom3, Wisdom4, wait, random_order[1], Wisdom5, Wisdom6, Wisdom7, Wisdom8, wait, random_order[2], Wisdom9, Wisdom10, Wisdom11, Wisdom12, wait, random_order[3], Wisdom13, Wisdom14, Wisdom15, Wisdom16, wait, random_order[4], Wisdom17, Wisdom18, Wisdom19, Wisdom20, wait, random_order[5]]
 }
 /* add the real trials with their nested timelines to the larger first-level timeline */
 timeline.push(real_trials);
