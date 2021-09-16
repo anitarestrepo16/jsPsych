@@ -10,7 +10,7 @@ Qualtrics.SurveyEngine.addOnload(function () {
     qthis.hideNextButton();
 
     /* Change 2: Defining and load required resources */
-    var github_url = "https://anitarestrepo16.github.io/new_stroop/qualtrics_testing";
+    var github_url = "https://anitarestrepo16.github.io/new_stroop/qualtrics_testing/";
 
     // the below urls must be accessible with your browser
     // for example, https://kywch.github.io/jsPsych/jspsych.js
@@ -77,7 +77,7 @@ Qualtrics.SurveyEngine.addOnload(function () {
             type: 'html-keyboard-response',
             stimulus: 'Hello world!'
         }
-        
+
         jsPsych.init({
             timeline: [hello_trial],
             display_element: 'display_stage',
