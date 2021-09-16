@@ -10,7 +10,7 @@ Qualtrics.SurveyEngine.addOnload(function () {
     qthis.hideNextButton();
 
     /* Change 2: Defining and load required resources */
-    var github_url = "https://anitarestrepo16.github.io/new_stroop/social-stroop";
+    var github_url = "https://anitarestrepo16.github.io/new_stroop/social-stroop/";
 
     // the below urls must be accessible with your browser
     // for example, https://kywch.github.io/jsPsych/jspsych.js
@@ -51,7 +51,7 @@ Qualtrics.SurveyEngine.addOnload(function () {
 
     // you must put your save_data php url here.
     var save_url = "https://users.rcc.uchicago.edu/~ar277/exp_data/save_data.php";
-    var data_dir = task_name;
+    var data_dir = 'stroop'; // this matches the name of the directory I made in the web server
 
     // my preference is to include the task and sbj_id in the file name
     var file_name = task_name + '_' + sbj_id; 
