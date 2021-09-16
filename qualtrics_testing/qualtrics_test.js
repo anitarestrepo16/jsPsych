@@ -68,14 +68,16 @@ Qualtrics.SurveyEngine.addOnload(function () {
         });
     }
 
-    var hello_trial = {
-        type: 'html-keyboard-response',
-        stimulus: 'Hello world!'
-    }
+
 
     /* Change 4: Wrapping jsPsych.init() in a function */
     function initExp() {
 
+        var hello_trial = {
+            type: 'html-keyboard-response',
+            stimulus: 'Hello world!'
+        }
+        
         jsPsych.init({
             timeline: [hello_trial],
             display_element: 'display_stage',
