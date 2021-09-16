@@ -10,7 +10,7 @@ Qualtrics.SurveyEngine.addOnload(function () {
     qthis.hideNextButton();
 
     /* Change 2: Defining and load required resources */
-    var github_url = "https://ar277.github.io/new_stroop/social-stroop";
+    var github_url = "https://anitarestrepo16.github.io/new_stroop/social-stroop";
 
     // the below urls must be accessible with your browser
     // for example, https://kywch.github.io/jsPsych/jspsych.js
