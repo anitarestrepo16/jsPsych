@@ -275,7 +275,7 @@ var sleep13 = {
 
 var sleep14 = {
     type: "html-button-response",
-    stimulus: `<p style = 'color: white;'> On avergae, how do you think your sleep quality compares to that of other people in your life (friends, family, etc.)? </p>`,
+    stimulus: `<p style = 'color: white;'> On average, how do you think your sleep quality compares to that of other people in your life (friends, family, etc.)? </p>`,
     choices: ['A lot worse', 'Slightly worse', 'About the same', 'Slightly better', 'A lot better'],
     data: {
         task: "sleep_others"
@@ -1229,7 +1229,7 @@ var random_order = jsPsych.randomization.shuffle(blocks);
 
 /* create another level of nested timelines where we intersperse the blocks of words with the sleep questionnaire items */
 var real_trials = {
-    timeline: [random_order[0], sleep15, sleep1, sleep2, sleep3, wait, random_order[1], sleep16, sleep4, sleep5, sleep6, wait, random_order[2], sleep17, sleep7, sleep8, sleep9, wait, random_order[3], sleep18, sleep10, sleep11, sleep12, wait, random_order[4],sleep19, sleep13, sleep15, sleep20, wait, random_order[5]]
+    timeline: [random_order[0], sleep15, sleep1, sleep2, sleep3, wait, random_order[1], sleep16, sleep4, sleep5, sleep6, wait, random_order[2], sleep17, sleep7, sleep8, sleep9, wait, random_order[3], sleep18, sleep10, sleep11, sleep12, wait, random_order[4],sleep19, sleep13, sleep14, sleep20, wait, random_order[5]]
 }
 /* add the real trials with their nested timelines to the larger first-level timeline */
 timeline.push(real_trials);
