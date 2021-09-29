@@ -47,6 +47,12 @@ Qualtrics.SurveyEngine.addOnload(function () {
     // experimental session-defining variables
     var task_name = "test"; // change this for each individual task
     var sbj_id = "${e://Field/workerId}";
+    console.log(sbj_id);
+    sbj_id = sbj_id.trim();
+        if (sbj_id.length == 0) {
+            console.log("No participant id. Stopping the experiment.");
+            //return false;
+        }
 
     // you must put your save_data php url here.
     var save_url = "https://users.rcc.uchicago.edu/~ar277/exp_data/save_data.php";
@@ -77,9 +83,13 @@ Qualtrics.SurveyEngine.addOnload(function () {
             type: 'html-keyboard-response',
             stimulus: 'Hello world!'
         }
+        var show_id = {
+            type: 'html-keyboard-response',
+            stimulus: sbj_id
+        }
 
         jsPsych.init({
-            timeline: [hello_trial],
+            timeline: [hello_trial, show_id],
             display_element: 'display_stage',
 
             /* Change 5: Adding the clean up and continue functions.*/
@@ -93,8 +103,8 @@ Qualtrics.SurveyEngine.addOnload(function () {
                 save_data_csv();
 
                 // clear the stage
-                jQuery('display_stage').remove();
-                jQuery('display_stage_background').remove();
+                jQuery('#display_stage').remove();
+                jQuery('#display_stage_background').remove();
 
                 // simulate click on Qualtrics "next" button, making use of the Qualtrics JS API
                 qthis.clickNextButton();
