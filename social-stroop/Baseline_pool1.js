@@ -5,9 +5,12 @@ var timeline = [];
 var instructions_block = {
     type: "html-keyboard-response",
     stimulus: `<p style= 'color: white;'>In this task a word will appear in the middle of the screen. 
-    When the word appears respond with the <strong>color of the text</strong> as quickly as you can. 
-    Press <strong>R</strong> for RED, <strong>Y</strong> for YELLOW, <strong>G</strong> for GREEN, 
-    and <strong>B</strong> for BLUE. Press any key to continue.</p>`,
+    When the word appears respond with the <strong>color of the text</strong> as quickly as you can.<br> 
+    <span style = "color: rgb(232, 0, 0)">Press <strong>R</strong> for RED</span><br> 
+    <span style = "color: rgb(255, 255, 0)">Press <strong>Y</strong> for YELLOW</span><br>
+    <span style = "color: rgb(0, 125, 0)">Press <strong>G</strong> for GREEN</span><br>
+    <span style = "color: rgb(23, 5, 250)">Press <strong>B</strong> for BLUE</span><br> 
+    Press any key to continue.</p>`,
     post_trial_gap: 750,
     data: {
         task: "instructions"
