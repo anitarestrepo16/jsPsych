@@ -385,7 +385,7 @@ var wait = {
 }
 
 var ready = {
-    type: "html-keayboard-response",
+    type: "html-keyboard-response",
     stimulus: `<p style = 'color: orange; font-size: 50px'><strong> GET READY!
      The next game is starting in 5 seconds! </strong></p>`,
     choices: jsPsych.NO_KEYS,
