@@ -22,10 +22,12 @@ timeline.push(instructions_block);
 /* Second instructions screen with practice-specific info */
 var practice_start = {
     type: "html-keyboard-response",
-    stimulus: `<p style= 'color: white;'>We will start with some practice trials. 
+    stimulus: `<p style= 'color: white;'>We will start with some practice trials. <br>
+    <br> 
     During the practice trials, if you press the wrong key, you will see the word <strong>WRONG</strong> on the screen.
      If you press the correct key, you will see the word <strong>CORRECT</strong> on the screen. 
      After the practice trials we will begin the real game.<br> 
+     <br>
     Press any key to continue.</p>`,
     post_trial_gap: 750,
     data: {
@@ -386,7 +388,8 @@ var wait = {
 
 var ready = {
     type: "html-keayboard-response",
-    stimulus: `<p style = 'color: orange;'> GET READY! The next game is starting in 5 seconds! </p>`,
+    stimulus: `<p style = 'color: orange; font-size: 50px'><strong> GET READY!
+     The next game is starting in 5 seconds! </strong></p>`,
     choices: jsPsych.NO_KEYS,
     trial_duration: 5000,
     data: {
