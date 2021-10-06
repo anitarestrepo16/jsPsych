@@ -20,6 +20,25 @@ var instructions_block = {
 /* add instructions to timeline variable */
 timeline.push(instructions_block);
 
+/* Second instructions screen with practice-specific info */
+var practice_start = {
+    type: "html-keyboard-response",
+    stimulus: `<p style= 'color: white;'>We will start with some practice trials. <br>
+    <br> 
+    During the practice trials, if you press the wrong key, you will see the word <strong>WRONG</strong> on the screen.
+     If you press the correct key, you will see the word <strong>CORRECT</strong> on the screen. 
+     After the practice trials we will begin the real game.<br> 
+     <br>
+    Press any key to continue.</p>`,
+    post_trial_gap: 750,
+    data: {
+        task: "instructions"
+    }
+};
+
+/* add practice instructions to timeline variable */
+timeline.push(practice_start);
+
 /* create the fixation cross in white */
 var fixation = {
     type: 'html-keyboard-response',
@@ -357,11 +376,22 @@ var wait = {
     choices: jsPsych.NO_KEYS,
     trial_duration: function(){
         var last_trials_time_elapsed = jsPsych.data.get().last(4).values();
-        var duration = 60000 - (last_trials_time_elapsed[0].rt + last_trials_time_elapsed[1].rt + last_trials_time_elapsed[2].rt + last_trials_time_elapsed[3].rt);
+        var duration = 55000 - (last_trials_time_elapsed[0].rt + last_trials_time_elapsed[1].rt + last_trials_time_elapsed[2].rt + last_trials_time_elapsed[3].rt);
         return duration
     },
     data: {
         task: "wait"
+    }
+}
+
+var ready = {
+    type: "html-keayboard-response",
+    stimulus: `<p style = 'color: orange; font-size: 50px'><strong> GET READY!
+     The next game is starting in 5 seconds! </strong></p>`,
+    choices: jsPsych.NO_KEYS,
+    trial_duration: 5000,
+    data: {
+        task: "ready"
     }
 }
 
@@ -1232,7 +1262,7 @@ var random_order = jsPsych.randomization.shuffle(blocks);
 
 /* create another level of nested timelines where we intersperse the blocks of words with the sleep questionnaire items */
 var real_trials = {
-    timeline: [random_order[0], sleep15, sleep1, sleep2, sleep3, wait, random_order[1], sleep16, sleep4, sleep5, sleep6, wait, random_order[2], sleep17, sleep7, sleep8, sleep9, wait, random_order[3], sleep18, sleep10, sleep11, sleep12, wait, random_order[4],sleep19, sleep13, sleep14, sleep20, wait, random_order[5]]
+    timeline: [random_order[0], sleep15, sleep1, sleep2, sleep3, wait, ready, random_order[1], sleep16, sleep4, sleep5, sleep6, wait, ready, random_order[2], sleep17, sleep7, sleep8, sleep9, wait, ready, random_order[3], sleep18, sleep10, sleep11, sleep12, wait, ready, random_order[4],sleep19, sleep13, sleep14, sleep20, wait, ready, random_order[5]]
 }
 /* add the real trials with their nested timelines to the larger first-level timeline */
 timeline.push(real_trials);
